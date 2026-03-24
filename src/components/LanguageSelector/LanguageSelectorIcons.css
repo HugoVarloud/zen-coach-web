@@ -1,0 +1,243 @@
+/* Language Selector with Modern SVG Icons */
+
+.language-selector-icons {
+  position: relative;
+  z-index: 1000;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    sans-serif;
+}
+
+/* Remove all default outlines and borders */
+.language-selector-icons button:focus {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.language-selector-icons button:focus-visible {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.language-selector-icons button:active {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.language-selector-icons button {
+  outline: none !important;
+}
+
+/* Main Button */
+.language-button-icons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+  font-weight: 500;
+  min-width: 120px;
+  height: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.language-button-icons::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.language-button-icons:hover::before {
+  left: 100%;
+}
+
+.language-button-icons:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.language-button-icons:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Language SVG Icon */
+.language-svg-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+  padding: 2px;
+}
+
+.language-button-icons:hover .language-svg-icon {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.language-svg-icon svg {
+  width: 100%;
+  height: 100%;
+  /* Remove fill override to allow flag colors to show */
+}
+
+/* Language Name */
+.language-name-icons {
+  font-weight: 500;
+  letter-spacing: 0.025em;
+}
+
+/* Chevron Icon */
+.chevron-icons {
+  margin-left: auto;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0.7;
+}
+
+.chevron-icons.rotated {
+  transform: rotate(180deg);
+}
+
+/* Dropdown */
+.language-dropdown-icons {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: none;
+  border-radius: 12px;
+  padding: 4px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  animation: dropdownSlideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+/* Language Options */
+.language-option-icons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 12px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  height: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.language-option-icons::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transition: left 0.3s;
+}
+
+.language-option-icons:hover::before {
+  left: 100%;
+}
+
+.language-option-icons:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 1);
+}
+
+.language-option-icons.focused {
+  background: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 1);
+  box-shadow: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .language-button-icons {
+    min-width: 100px;
+    padding: 6px 10px;
+    font-size: 13px;
+    height: 36px;
+  }
+
+  .language-svg-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .language-dropdown-icons {
+    top: calc(100% + 6px);
+  }
+
+  .language-option-icons {
+    padding: 6px 10px;
+    font-size: 13px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .language-button-icons {
+    min-width: 80px;
+    padding: 5px 8px;
+    gap: 6px;
+    height: 32px;
+  }
+
+  .language-svg-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .language-name-icons {
+    font-size: 12px;
+  }
+
+  .language-option-icons {
+    padding: 5px 8px;
+    height: 32px;
+  }
+}

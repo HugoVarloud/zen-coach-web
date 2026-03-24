@@ -1,0 +1,47 @@
+.landing-philosophy {
+  background: var(--landing-bg-elevated);
+  border-top: 1px solid var(--landing-stroke);
+  border-bottom: 1px solid var(--landing-stroke);
+}
+
+.landing-philosophy__inner {
+  max-width: 800px;
+  text-align: center;
+}
+
+.landing-philosophy__quote {
+  margin: 0 0 2rem;
+  padding: 0;
+  border: none;
+}
+
+.landing-philosophy__quote p {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--landing-ink);
+  margin: 0;
+}
+
+.landing-philosophy__reassure {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.65rem 1rem;
+}
+
+.landing-philosophy__pill {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid var(--landing-philosophy-pill-border);
+  color: var(--landing-ink-soft);
+}
+
+[data-theme="dark"] .landing-philosophy__pill {
+  background: rgba(255, 255, 255, 0.06);
+}

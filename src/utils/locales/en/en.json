@@ -1,0 +1,148 @@
+{
+  "Landing": {
+    "NavHero": "Home",
+    "NavBenefits": "Benefits",
+    "NavShowcase": "In the app",
+    "NavHow": "How it works",
+    "NavPricing": "Plans",
+    "NavPhilosophy": "Philosophy",
+    "NavDownload": "Download",
+    "NavContact": "Contact",
+    "NavDesktopAria": "On this page",
+    "Store": {
+      "aria": "Download Zen Coach",
+      "appStore": "App Store",
+      "googlePlay": "Google Play"
+    },
+    "Hero": {
+      "eyebrow": "Mobile app · iOS & Android",
+      "title": "Find calm in your day",
+      "subtitle": "Zen Coach helps you breathe, reset, and build gentle routines—right on your phone, at your own pace.",
+      "note": "Available on iPhone and Android · A few minutes are enough.",
+      "mockupMain": "App home",
+      "mockupThumb1": "Box breathing",
+      "mockupThumb2": "4-7-8",
+      "mockupThumb3": "Coherent",
+      "mainScreenAlt": "Zen Coach screenshot — choose your breathing exercise",
+      "thumbAlt478": "Zen Coach screenshot — 4-7-8 breathing",
+      "thumbAltCoherent": "Coherent breathing session",
+      "thumbAltBox": "Box breathing session",
+      "thumbsStripAria": "More screenshots from the app"
+    },
+    "Benefits": {
+      "title": "What Zen Coach gives you",
+      "lead": "Designed to be useful, soft, and realistic—not to overwhelm you.",
+      "items": {
+        "one": {
+          "title": "Calm in minutes",
+          "text": "Short exercises to soften tension and widen your breath—wherever you are."
+        },
+        "two": {
+          "title": "Routines that fit you",
+          "text": "Bring well-being into your week without rigidity—optional quiet reminders."
+        },
+        "three": {
+          "title": "Simple guidance",
+          "text": "A clear interface without jargon—you don’t need to be a meditation expert."
+        },
+        "four": {
+          "title": "Privacy & autonomy",
+          "text": "Core use doesn’t require an account on our servers; preferences stay on your device first."
+        }
+      }
+    },
+    "Showcase": {
+      "title": "A glimpse of the in-app experience",
+      "lead": "The same calm UI and soft effects as on mobile—guided sessions, daily quote, settings.",
+      "deviceLabel": "Guided session",
+      "sessionAlt": "Zen Coach screenshot — coherent breathing",
+      "stripAria": "More Zen Coach app screenshots",
+      "stripAltQuote": "Phrase of the day",
+      "stripAltCoherence": "Cardiac coherence",
+      "stripAlt478": "4-7-8 breathing",
+      "panels": {
+        "a": {
+          "title": "Guided sessions",
+          "text": "Follow the rhythm without timing in your head—ideal when your mind is full."
+        },
+        "b": {
+          "title": "Content to inspire",
+          "text": "Quotes and anchors to pause and widen perspective."
+        },
+        "c": {
+          "title": "Habits that stick",
+          "text": "Repeatable gestures that fit a busy life."
+        }
+      }
+    },
+    "How": {
+      "title": "How it works",
+      "lead": "Three simple steps to start without friction.",
+      "steps": {
+        "1": {
+          "title": "Install Zen Coach",
+          "text": "Download from the App Store or Google Play and open it whenever you need—morning, break, or evening."
+        },
+        "2": {
+          "title": "Choose an intention",
+          "text": "Breathing, a short pause, or a routine—pick what fits the moment."
+        },
+        "3": {
+          "title": "Come back when you want",
+          "text": "No daily score—Zen Coach supports you without grading you."
+        }
+      }
+    },
+    "Pricing": {
+      "title": "Free & premium",
+      "lead": "A clear model: start free, go deeper if it fits.",
+      "free": {
+        "title": "Free",
+        "desc": "Core access to discover Zen Coach and build the habit of pausing.",
+        "b1": "Foundational content and first routines",
+        "b2": "Full experience to try without a card",
+        "b3": "Upgrade to premium when you decide"
+      },
+      "premium": {
+        "title": "Premium",
+        "desc": "Go further with features unlocked via the App Store or Google Play.",
+        "b1": "Broader content and advanced options",
+        "b2": "In-app purchases handled by Apple or Google depending on your device",
+        "b3": "Manage subscriptions in your App Store or Google account settings",
+        "previewAlt": "Zen Coach Premium screenshot"
+      },
+      "footnote": "Payments and subscriptions go through the official stores (Apple / Google). Legal notices and privacy policy are in the footer."
+    },
+    "Philosophy": {
+      "quote": "Well-being isn’t a performance—it’s a kinder way to live your day.",
+      "points": {
+        "p1": "No pressure",
+        "p2": "Local data when possible",
+        "p3": "Support, not judgment"
+      }
+    },
+    "FinalCta": {
+      "title": "Ready for a pause that matters?",
+      "text": "Install Zen Coach on iPhone or Android and give yourself a simple ritual—today, or whenever you need it."
+    }
+  },
+  "Loader": {
+    "statusPrepare": "Getting ready…",
+    "statusFonts": "Loading fonts…",
+    "statusHero": "Preparing preview…",
+    "statusAnimations": "Preparing motion…",
+    "statusI18n": "Loading copy…",
+    "statusFinalize": "Almost there…",
+    "ariaOverlay": "Loading Zen Coach site",
+    "skip": "Skip",
+    "percentAria": "Loading: {{pct}}%"
+  },
+  "Contact": {
+    "footerTagline": "Mobile app for guided breathing and well-being.",
+    "footerContactLabel": "Contact",
+    "footerLegal": "Legal & privacy",
+    "Signature": "© 2024 Zen Coach · ",
+    "LegalLinkCgu": "Terms of use",
+    "LegalLink": "Privacy policy"
+  }
+}

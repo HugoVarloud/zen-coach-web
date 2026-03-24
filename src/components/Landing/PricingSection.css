@@ -1,0 +1,85 @@
+.landing-pricing {
+  background: var(--landing-bg-canvas);
+}
+
+.landing-pricing__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+@media (max-width: 720px) {
+  .landing-pricing__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.landing-pricing__card {
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border-radius: 20px;
+  background: var(--landing-bg-card);
+  border: 1px solid var(--landing-stroke);
+  box-shadow: var(--landing-shadow-soft);
+}
+
+.landing-pricing__preview {
+  border-radius: 14px;
+  overflow: hidden;
+  margin: -0.25rem -0.25rem 1rem;
+  border: 1px solid var(--landing-pricing-preview-border);
+  box-shadow: var(--landing-pricing-preview-shadow);
+}
+
+.landing-pricing__preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.landing-pricing__card--accent {
+  border-color: var(--landing-pricing-accent-border);
+  background: var(--landing-pricing-accent-bg);
+}
+
+[data-theme="dark"] .landing-pricing__card--accent {
+  background: var(--landing-pricing-accent-bg);
+  border-color: var(--landing-pricing-accent-border);
+}
+
+.landing-pricing__card h3 {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+  color: var(--landing-ink);
+}
+
+.landing-pricing__desc {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--landing-ink-soft);
+  margin: 0 0 1rem;
+  line-height: 1.5;
+}
+
+.landing-pricing__list {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--landing-ink-soft);
+}
+
+.landing-pricing__footnote {
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--landing-ink-muted);
+  max-width: 52ch;
+  margin: 2rem auto 0;
+  line-height: 1.55;
+}

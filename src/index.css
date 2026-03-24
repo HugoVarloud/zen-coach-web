@@ -1,0 +1,206 @@
+@font-face {
+  font-family: "Akira Expanded";
+  src: url("/assets/fonts/akira_bold-webfont.woff2") format("woff2");
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Zen Coach — DA « Nordique » : brume, gris-bleu, spa scandinave (clair / sombre) */
+:root {
+  --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-sans: "DM Sans", system-ui, -apple-system, sans-serif;
+
+  --zc-navy: #3d4a5c;
+  --zc-navy-deep: #1a2028;
+  --zc-navy-hover: #4a5a6e;
+  --zc-navy-ink: #2c333d;
+  --zc-sage: #7a8fa3;
+  --zc-sage-mist: #9aacbd;
+  --zc-green: #6b7c8f;
+  --zc-green-soft: #95a5b8;
+  --zc-nude: #a8a5a0;
+  --zc-nude-light: #d4d0ca;
+  --zc-blush: #c4c0bc;
+  --zc-canvas: #eef1f4;
+  --zc-canvas-warm: #f4f6f8;
+
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  font-weight: 400;
+  width: 100%;
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --color-bg: var(--zc-canvas);
+  --color-bg-secondary: #e2e6ec;
+  --color-text: var(--zc-navy-ink);
+  --color-text-secondary: #4a5568;
+  --color-border: rgba(44, 51, 61, 0.1);
+  --color-accent: var(--zc-sage);
+  --color-accent-hover: #5a6d82;
+  --color-card: #ffffff;
+  --color-overlay: rgba(26, 32, 40, 0.42);
+  --color-nav-bg: rgba(238, 241, 244, 0.92);
+  --color-nav-bg-scrolled: rgba(255, 255, 255, 0.95);
+  --color-nav-text: var(--zc-navy);
+  --color-nav-text-scrolled: var(--zc-navy-ink);
+  --color-section-bg: var(--zc-canvas);
+  --color-footer-bg: var(--zc-navy-deep);
+  --color-footer-text: #e6eaf0;
+  --color-nav-menu-bg: rgba(228, 232, 238, 0.95);
+  --theme-transition: background-color 0.25s ease, color 0.25s ease,
+    border-color 0.25s ease;
+
+  --header-height: 70px;
+
+  --landing-bg-canvas: var(--zc-canvas);
+  --landing-bg-elevated: #e4e8ee;
+  --landing-bg-card: rgba(255, 255, 255, 0.94);
+  --landing-ink: var(--zc-navy-ink);
+  --landing-ink-soft: #4a5568;
+  --landing-ink-muted: #6b7280;
+  --landing-accent: var(--zc-sage-mist);
+  --landing-stroke: rgba(44, 51, 61, 0.09);
+  --landing-stroke-strong: rgba(44, 51, 61, 0.12);
+  --landing-shadow-soft: 0 4px 28px rgba(30, 38, 48, 0.06);
+  --landing-shadow-hover: 0 14px 40px rgba(30, 38, 48, 0.1);
+  --landing-screen-bg: var(--zc-navy-deep);
+  --landing-footer-bg: var(--zc-navy-deep);
+  --landing-footer-text: #e6eaf0;
+  --landing-footer-muted: rgba(180, 195, 210, 0.55);
+
+  --palette-ink-rgb: 44, 51, 61;
+  --palette-sage-rgb: 140, 155, 175;
+  --palette-warm-glow-rgb: 190, 195, 205;
+  --palette-cool-glow-rgb: 160, 175, 200;
+  --palette-accent-secondary-rgb: 165, 172, 185;
+  --landing-cta-card-bg: linear-gradient(
+    155deg,
+    rgba(255, 255, 255, 0.96) 0%,
+    rgba(232, 238, 248, 0.8) 55%,
+    rgba(220, 230, 245, 0.5) 100%
+  );
+  --landing-cta-card-border: rgba(44, 51, 61, 0.11);
+  --landing-pricing-preview-border: rgba(44, 51, 61, 0.13);
+  --landing-pricing-preview-shadow: 0 8px 28px rgba(44, 51, 61, 0.1);
+  --landing-pricing-accent-border: rgba(140, 155, 175, 0.3);
+  --landing-pricing-accent-bg: linear-gradient(
+    165deg,
+    rgba(255, 255, 255, 0.98) 0%,
+    rgba(236, 240, 248, 0.82) 100%
+  );
+  --landing-philosophy-pill-border: rgba(44, 51, 61, 0.11);
+}
+
+/* Mode nuit — nordique nuit, ardoise & lavande grise */
+[data-theme="dark"] {
+  --color-bg: #12161c;
+  --color-bg-secondary: #181c24;
+  --color-text: #e6eaf0;
+  --color-text-secondary: #98a4b5;
+  --color-border: rgba(140, 155, 175, 0.14);
+  --color-accent: #a8b8cc;
+  --color-accent-hover: #d0dae8;
+  --color-card: #1a2028;
+  --color-overlay: rgba(0, 0, 0, 0.55);
+  --color-nav-bg: rgba(18, 22, 28, 0.92);
+  --color-nav-bg-scrolled: rgba(22, 26, 34, 0.97);
+  --color-nav-text: #e6eaf0;
+  --color-nav-text-scrolled: #e6eaf0;
+  --color-section-bg: #12161c;
+  --color-footer-bg: #0a0c10;
+  --color-footer-text: #e6eaf0;
+  --color-nav-menu-bg: rgba(10, 14, 20, 0.78);
+
+  --landing-bg-canvas: #12161c;
+  --landing-bg-elevated: #181c24;
+  --landing-bg-card: rgba(26, 32, 40, 0.9);
+  --landing-ink: #e6eaf0;
+  --landing-ink-soft: #a0aab8;
+  --landing-ink-muted: #788898;
+  --landing-accent: #8a9cb0;
+  --landing-stroke: rgba(140, 155, 175, 0.1);
+  --landing-stroke-strong: rgba(140, 155, 175, 0.14);
+  --landing-shadow-soft: 0 4px 32px rgba(0, 0, 0, 0.28);
+  --landing-shadow-hover: 0 12px 36px rgba(0, 0, 0, 0.35);
+  --landing-footer-bg: #0a0c10;
+  --landing-footer-text: #e6eaf0;
+  --landing-footer-muted: rgba(140, 155, 175, 0.48);
+
+  --palette-warm-glow-rgb: 150, 165, 185;
+  --palette-cool-glow-rgb: 120, 145, 175;
+  --palette-sage-rgb: 145, 165, 190;
+  --palette-ink-rgb: 195, 205, 220;
+  --palette-accent-secondary-rgb: 130, 150, 175;
+  --landing-philosophy-pill-border: rgba(200, 210, 225, 0.14);
+  --landing-cta-card-bg: linear-gradient(
+    155deg,
+    rgba(28, 34, 42, 0.94) 0%,
+    rgba(18, 22, 28, 0.96) 100%
+  );
+  --landing-cta-card-border: rgba(140, 155, 175, 0.18);
+  --landing-pricing-preview-border: rgba(140, 155, 175, 0.22);
+  --landing-pricing-preview-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
+  --landing-pricing-accent-border: rgba(140, 155, 175, 0.26);
+  --landing-pricing-accent-bg: linear-gradient(
+    165deg,
+    rgba(32, 38, 48, 0.96) 0%,
+    rgba(22, 26, 34, 0.93) 100%
+  );
+  --landing-screen-bg: var(--landing-footer-bg);
+}
+
+:root {
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  transition: var(--theme-transition);
+}
+
+a {
+  font-weight: 500;
+  color: var(--color-accent);
+  text-decoration: inherit;
+}
+a:hover {
+  color: var(--color-accent-hover);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: var(--theme-transition);
+  font-family: var(--font-sans);
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: var(--font-sans);
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text);
+  cursor: pointer;
+  transition: var(--theme-transition);
+}
+button:hover {
+  border-color: var(--color-accent);
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}

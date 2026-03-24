@@ -1,0 +1,42 @@
+.landing-final-cta {
+  padding-bottom: clamp(3rem, 8vw, 5rem);
+  background: var(--landing-bg-canvas);
+}
+
+.landing-final-cta__card {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+  padding: clamp(2rem, 5vw, 3rem);
+  border-radius: 24px;
+  background: var(--landing-cta-card-bg);
+  border: 1px solid var(--landing-cta-card-border);
+  box-shadow: var(--landing-shadow-soft);
+}
+
+[data-theme="dark"] .landing-final-cta__card {
+  background: var(--landing-cta-card-bg);
+  border-color: var(--landing-cta-card-border);
+}
+
+.landing-final-cta__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.65rem, 3vw, 2.1rem);
+  font-weight: 600;
+  margin: 0 0 0.75rem;
+  color: var(--landing-ink);
+}
+
+.landing-final-cta__text {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--landing-ink-soft);
+  margin: 0 0 1.5rem;
+}
+
+.landing-final-cta__stores {
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+}

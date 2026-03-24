@@ -1,0 +1,107 @@
+.store-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 0.75rem;
+  align-items: center;
+}
+
+.store-buttons--row {
+  flex-direction: row;
+}
+
+.store-buttons--stack {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.store-buttons--stack .store-btn {
+  justify-content: center;
+}
+
+.store-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.78rem 1.2rem;
+  border-radius: 14px;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.store-buttons--large .store-btn {
+  padding: 0.9rem 1.4rem;
+  font-size: 0.95rem;
+}
+
+.store-btn__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Clair — App Store : bleu nuit */
+.store-btn--apple {
+  background: var(--zc-navy);
+  color: #fff;
+  border-color: var(--zc-navy);
+  box-shadow: 0 4px 18px rgba(var(--palette-ink-rgb), 0.22);
+}
+
+.store-btn--apple:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(var(--palette-ink-rgb), 0.3);
+  background: var(--zc-navy-hover);
+  border-color: var(--zc-navy-hover);
+}
+
+/* Clair — Google Play : blanc cassé, survol sauge doux */
+.store-btn--google {
+  background: #fffcfa;
+  color: var(--zc-navy);
+  border-color: rgba(var(--palette-ink-rgb), 0.14);
+  box-shadow: 0 2px 12px rgba(var(--palette-ink-rgb), 0.05);
+}
+
+.store-btn--google:hover {
+  transform: translateY(-1px);
+  border-color: rgba(var(--palette-sage-rgb), 0.55);
+  box-shadow: 0 6px 20px rgba(var(--palette-sage-rgb), 0.14);
+}
+
+/* Mode nuit — pas de vert : tons nude / coquille d’œuf */
+[data-theme="dark"] .store-btn--apple {
+  background: rgba(255, 252, 248, 0.07);
+  color: #f0e8e0;
+  border-color: rgba(212, 200, 188, 0.35);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .store-btn--apple:hover {
+  background: rgba(212, 200, 188, 0.14);
+  border-color: rgba(228, 216, 204, 0.45);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28);
+}
+
+[data-theme="dark"] .store-btn--google {
+  background: rgba(255, 252, 248, 0.04);
+  color: #ddd4cc;
+  border-color: rgba(212, 200, 188, 0.2);
+  box-shadow: none;
+}
+
+[data-theme="dark"] .store-btn--google:hover {
+  border-color: rgba(212, 200, 188, 0.42);
+  background: rgba(212, 200, 188, 0.1);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.2);
+}

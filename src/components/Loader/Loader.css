@@ -1,0 +1,374 @@
+/**
+ * Styles CSS pour le système de loader
+ * @fileoverview Styles pour AppLoader et RouteLoader avec overlay plein écran
+ */
+
+/* Variables CSS pour cohérence avec le portfolio */
+:root {
+  --loader-primary: var(--zc-sage-mist, #7a8c72);
+  --loader-secondary: var(--zc-canvas-warm, #f5f7f3);
+  --loader-background: var(--zc-canvas, #f0f3ee);
+  --loader-text: var(--zc-navy-ink, #2a332c);
+  --loader-progress-bg: rgba(42, 51, 44, 0.12);
+  --loader-progress-fill: var(--zc-sage-mist, #7a8c72);
+  --loader-transition-duration: 1s;
+  --loader-easing: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Overlay principal du loader */
+.app-loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--loader-background);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity var(--loader-transition-duration) var(--loader-easing),
+    visibility var(--loader-transition-duration) var(--loader-easing);
+}
+
+/* État caché du loader */
+.app-loader-overlay.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Conteneur principal du contenu du loader */
+.loader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+  max-width: 400px;
+  padding: 2rem;
+}
+
+/* Logo ou titre du portfolio */
+.loader-logo {
+  font-family: var(--font-sans, "DM Sans", system-ui, sans-serif);
+  font-size: 2rem;
+  color: var(--loader-primary);
+  margin-bottom: 1rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+/* Message de chargement */
+.loader-message {
+  color: var(--loader-text);
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  min-height: 1.5rem;
+}
+
+/* Message secondaire */
+.loader-submessage {
+  color: var(--loader-text);
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-bottom: 1.5rem;
+  min-height: 1.2rem;
+}
+
+/* Conteneur de la barre de progression */
+.progress-container {
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 1rem;
+}
+
+/* Barre de progression */
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background: var(--loader-progress-bg);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Remplissage de la barre de progression */
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--loader-progress-fill), #00ff88);
+  border-radius: 2px;
+  width: 0%;
+  transition: width 0.3s ease-out;
+  position: relative;
+}
+
+/* Animation de brillance sur la barre */
+.progress-fill::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Pourcentage affiché */
+.progress-percentage {
+  color: var(--loader-text);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+/* Bouton continuer (fallback) */
+.loader-continue-btn {
+  background: var(--loader-primary);
+  color: var(--loader-background);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+}
+
+.loader-continue-btn.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.loader-continue-btn:hover {
+  background: #00e676;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(10, 255, 133, 0.3);
+}
+
+.loader-continue-btn:focus {
+  outline: 2px solid var(--loader-primary);
+  outline-offset: 2px;
+}
+
+/* Indicateur de connexion lente */
+.slow-connection-indicator {
+  color: #ff9800;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.slow-connection-indicator.visible {
+  opacity: 1;
+}
+
+/* Spinner alternatif pour prefers-reduced-motion */
+.loader-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--loader-progress-bg);
+  border-top: 3px solid var(--loader-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Support pour prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .loader-logo {
+    animation: none;
+  }
+
+  .progress-fill::after {
+    animation: none;
+  }
+
+  .loader-spinner {
+    animation: none;
+    border-top-color: var(--loader-primary);
+  }
+
+  .app-loader-overlay {
+    transition: none;
+  }
+
+  .progress-fill {
+    transition: none;
+  }
+
+  .loader-continue-btn {
+    transition: none;
+  }
+}
+
+/* Mini-loader pour les transitions de route */
+.route-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: transparent;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.route-loader-bar {
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--zc-sage, #5a6b52),
+    var(--zc-sage-mist, #7a8c72)
+  );
+  width: 0%;
+  transition: width 0.3s ease-out;
+  box-shadow: 0 0 12px rgba(90, 107, 82, 0.35);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .loader-content {
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .loader-logo {
+    font-size: 1.5rem;
+  }
+
+  .loader-message {
+    font-size: 1rem;
+  }
+
+  .loader-submessage {
+    font-size: 0.8rem;
+  }
+
+  .progress-container {
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .loader-content {
+    padding: 0.5rem;
+    gap: 1rem;
+  }
+
+  .loader-logo {
+    font-size: 1.2rem;
+  }
+
+  .progress-container {
+    max-width: 200px;
+  }
+}
+
+/* États de chargement spécifiques */
+.loader-state-loading-fonts .loader-submessage::before {
+  content: "🔤 ";
+}
+
+.loader-state-loading-images .loader-submessage::before {
+  content: "🖼️ ";
+}
+
+.loader-state-loading-animations .loader-submessage::before {
+  content: "✨ ";
+}
+
+.loader-state-loading-translations .loader-submessage::before {
+  content: "🌐 ";
+}
+
+/* Animation d'entrée du loader */
+@keyframes loaderFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.app-loader-overlay {
+  animation: loaderFadeIn 0.5s ease-out;
+}
+
+/* Animation de sortie du loader */
+@keyframes loaderFadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+}
+
+.app-loader-overlay.exiting {
+  animation: loaderFadeOut 0.5s ease-in forwards;
+}
+
+/* Styles pour les lecteurs d'écran uniquement */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
